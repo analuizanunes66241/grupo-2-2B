@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlog - Página Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #35466a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto; /* Alterado para auto para permitir o conteúdo */
+            margin: 0;
+        }
+
+        .container {
+            background-color: #6079c3;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background-color: #204e5e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #d3d3d3;
+            margin-bottom: 10px;
+        }
+
+        .section div {
+            width: 45%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .section div p {
+            font-weight: normal;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .fofocas {
+            padding: 10px 0;
+           font-size :0.95em; 
+       }
+       
+       .fofocas h2 { 
+           font-size :1.1em; 
+           font-weight:bold; 
+           margin-bottom :10 px; 
+           text-align:center; 
+       }
+
+       .fofocas ul { 
+           list-style-type :disc; 
+           padding-left :20 px; 
+       }
+
+       .fofocas ul li { 
+           margin-bottom :8 px; 
+       }
+
+       .button-container { 
+           text-align:center; 
+           margin-top :20 px; 
+       }
+
+       .button-container a { 
+           text-decoration:none; 
+           color:white; 
+           background-color:#5067a8; 
+           padding :10 px20 px; 
+           border-radius :5 px; 
+           font-size :1 em; 
+       }
+
+       .button-container a:hover { 
+           background-color:#405184; 
+       }
+   </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Bem Vindo ao nosso vlog</div>
+
+        <div class="section">
+          <div>
+              <h3>Inicio</h3>
+              <p>Pensar num assunto para atrair o público;<br> Criar o roteiro com as falas;<br> Começar a gravação.</p>
+          </div>
+          <div>
+              <h3>Fim</h3>
+              <p>Se despedir do público pedindo para curtir, comentar, compartilhar e se inscrever.</p>
+          </div>
+      </div>
+
+      <div class="fofocas">
+          <h2>Fofocas do Dia</h2>
+          <ul>
+              <li>Caixas pretas registraram vozes e dados do avião que caiu em Vinhedo.</li>
+              <li>Narcisa recebe convite da Globo, pensa ser trote e pede para Eliana confirmar.</li>
+              <li>Menina morre após amiga jogá-la na frente do carro com a brincadeira “Vai Luana amiga, joga pros D”.</li>
+          </ul>
+      </div>
+
+      <div class="button-container">
+          <a href="cadastro.html">Cadastrar</a>
+          <a href="#" onclick="logout()">Sair</a> <!-- Botão para sair -->
+      </div>
+
+   </div>
+
+   <script>
+       // Verifica se o usuário está logado
+       if (!localStorage.getItem('loggedIn')) {
+           alert('Você precisa estar logado para acessar esta página.');
+           window.location.href = 'login.html'; // Redireciona para a página de login
+       }
+
+       function logout() {
+           localStorage.removeItem('loggedIn'); // Remove o estado de login
+           alert('Você foi desconectado.');
+           window.location.href = 'login.html'; // Redireciona para a página de login
+       }
+   </script>
+
+</body>
+</html>
