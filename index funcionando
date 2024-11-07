@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlog - Página Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #35466a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #6079c3;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background-color: #204e5e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            color: white;
+            background-color: #5067a8;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .button-container a:hover {
+           background-color:#405184; 
+       }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Bem Vindo ao nosso vlog</div>
+
+        <div class="button-container">
+           <a href="cadastro.html">Cadastrar</a>
+           <a href="#" onclick="logout()">Sair</a> <!-- Botão para sair -->
+       </div>
+   </div>
+
+   <script>
+       // Verifica se o usuário está logado
+       if (!localStorage.getItem('loggedIn')) {
+           alert('Você precisa estar logado para acessar esta página.');
+           window.location.href = 'login.html'; // Redireciona para a página de login
+       }
+
+       function logout() {
+           localStorage.removeItem('loggedIn'); // Remove o estado de login
+           alert('Você foi desconectado.');
+           window.location.href = 'login.html'; // Redireciona para a página de login
+       }
+   </script>
+
+</body>
+</html>
